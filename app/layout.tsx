@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
-
+import ClientOnly from "./components/ClientOnly";
+import Modal from "./components/modals/Modal";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,7 +32,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className={font.className}>
-        <Navbar />
+        <ClientOnly>
+          <Modal
+            isOpen
+            onClose={() => {}}
+            onSubmit={() => {}}
+            actionLabel="Submit"
+          />
+          <Navbar />
+        </ClientOnly>
         {children}
       </body>
     </html>
