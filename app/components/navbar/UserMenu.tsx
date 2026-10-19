@@ -3,7 +3,9 @@ import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
+import useRegisterModal from "./../../hooks/useRegistorModal";
 const UserMenu = () => {
+  const registerModal = useRegisterModal();
   const [isOPen, setIsOpen] = React.useState<boolean>(false);
   const toggleOPen = React.useCallback(() => {
     setIsOpen((value: boolean) => !value);
@@ -27,7 +29,7 @@ const UserMenu = () => {
       </div>
       {isOPen && (
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden top-full mt-2 right-0 text-sm">
-          <MenuItem label="Register" onClick={() => {}} />
+          <MenuItem label="Register" onClick={registerModal.onOpen} />
           <MenuItem label="Login" onClick={() => {}} />
         </div>
       )}

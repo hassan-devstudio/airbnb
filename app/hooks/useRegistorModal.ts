@@ -1,6 +1,6 @@
 import { create } from "zustand";
 interface ModalProps {
-  isOpen?: boolean;
+  isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
 }

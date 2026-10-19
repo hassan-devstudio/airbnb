@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import useRegisterModal from "../hooks/useRegistorModal";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
