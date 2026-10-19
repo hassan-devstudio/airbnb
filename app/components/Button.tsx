@@ -17,9 +17,10 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:opacity-80 transition w-full ${outline ? "bg-white" : "bg-rose-500"} ${outline ? "border-black" : "border-rose-500"} ${outline ? "text-black" : "text-white"} ${small ? "text-sm" : "text-md"} ${small ? "py-1" : "py-3"} ${small ? "px-2" : "px-4"} ${small ? "border-[1px]" : "border-[2px]"} ${small ? "font-light" : "font-semibold"}
+      className={`relative w-full rounded-lg border font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed ${outline ? "bg-white border-neutral-300 text-neutral-800 enabled:hover:border-neutral-800 enabled:hover:bg-neutral-50 enabled:active:bg-neutral-100" : "bg-rose-500 border-rose-500 text-white enabled:hover:bg-rose-600 enabled:hover:border-rose-600 enabled:active:bg-rose-700"} ${small ? "text-sm py-1 px-2" : "text-base py-3 px-4"}
       ${icon ? "flex flex-row items-center justify-center" : ""} ${
         icon ? (small ? "gap-1" : "gap-2") : ""
       } `}

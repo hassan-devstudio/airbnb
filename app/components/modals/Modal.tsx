@@ -65,8 +65,11 @@ const Modal: React.FC<ModalProps> = ({
             {/* HEADER */}
             <div className="flex items-center p-6 rounded-t justify-center border-gray-100 border-b-[1px] relative">
               <button
+                type="button"
+                aria-label="Close modal"
+                disabled={disabled}
                 onClick={handleClose}
-                className="p-1 rounded-full hover:opacity-70 transition absolute left-9"
+                className="absolute left-6 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-600 transition-colors enabled:hover:border-neutral-400 enabled:hover:bg-neutral-100 enabled:hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <IoMdClose />
               </button>
