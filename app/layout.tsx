@@ -4,7 +4,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
-import Modal from "./components/modals/Modal";
+import ModalHost from "./components/modals/ModalHost";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,12 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className={font.className}>
         <ClientOnly>
-          <Modal
-            isOpen
-            onClose={() => {}}
-            onSubmit={() => {}}
-            actionLabel="Submit"
-          />
+          <ModalHost />
           <Navbar />
         </ClientOnly>
         {children}
